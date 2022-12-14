@@ -40,7 +40,7 @@
 
 <div id="mapid"></div>
 <div id="messageBox"> 
-  <img id="myImg" src="data/shepherd.jpg" alt="shepherd" width="608" height="456">
+  <center><img id="myImg" src="data/shepherd.jpg" alt="shepherd" width="608" height="456"></center>
   <h2 id="message">BAD DOGS</h2>
   
 </div>
@@ -48,125 +48,5 @@
 <div id="lowerHalf"> 
   <button type="button" onclick="alert('Hello world!')">Add a Map</button>
 </div>
-
-
-
-
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script><script  src="./script.js"></script>
-<style>
-#myimage2 {
-    background:transparent url('map12.jpg') ;
-    width:5000px;
-    height:5000px;
-    clip-path: url(#mask);
-    position:absolute;
-    top: 480px; 
-    border: 1px solid;
-}
-    
-    
-
-
-#messageBox {
-    
-        max-width: 50%;
-        width: 100%;
-        position: fixed;
-        top: 80px;
-        right: 40px;
-        z-index: 2;
-        border: 1px solid;
-    }
-/* 
-#lowerHalf {
-    
-        max-width: 50%;
-        width: 100%;
-        position: fixed;
-        top: 380px;
-        right: 40px;
-        z-index: 2;
-        border: 3px solid;
-    } */
-/* 
-#mapid { height: 80px;
-         top: 480px; 
-        z-index: 20
-    } */
-    #mask {
-    position: absolute;
-    float: left;
-    left: 650px;
-    width: 600px;
-    border: 3px solid;
-    }
-    #myimage2 {
-        position: absolute;
-        float: left;
-        /* width: 650px;
-        height: 600px; */
-        top: 70px;
-        border: 3px solid;
-        }
-
-   
-
-</style>
-
-<script>
-let messageArray = [
-                    "Last seen getting into garbage in North Arlington.",
-                    "Was chasing cats near the school.",
-                    "slipped out the back while I wasn't looking.",
-                    "Is really a good boy."];
-
-
-let imageArray = ["data/shepherd.jpg",
-                  "data/pitbull.jpg",
-                  "data/terrier.jpg",
-                 "data/mutt.jpg"];
-let counter = 0;
-//document.getElementById('circle1').setAttribute("height", "10px");
-//this is leaflet information 
-var mymap = L.map('mapid').setView([39.6035720419788, -0.09], 13);
-
-$( document ).ready(function() {
-
-
-
-
-
-    $( "#myimage2" ).click(function() {  
-   //   dragElement(document.getElementById('myimage2'));  
-   let trap = document.getElementById('messageBox').innerHTML; 
-
-
-var randNumMin = -980;
-var randNumMax = 980;
-var xPos = (Math.floor(Math.random() * (randNumMax - randNumMin + 1)) + randNumMin);
-var yPos = (Math.floor(Math.random() * (randNumMax - randNumMin + 1)) + randNumMin);
-console.log(trap);
-     
-      document.getElementById('myImg').src = imageArray[counter];
-      document.getElementById('message').innerHTML =  "<h1>"+messageArray[counter]+"</h1"
-      
-
-
-            $(this).animate({'backgroundPosition-x': '+='+xPos},"fast");
-            $(this).animate({'backgroundPosition-y': '+='+yPos},"fast");
-            //let message = document.getElementById("messageBox").innerHTML;
-            
-          counter = counter + 1;
-          if (counter > messageArray.length-1){
-            counter = 0;
-          }
-            
-
-  });
- 
-});
-
-</script>
 </body>
 </html>
